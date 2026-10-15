@@ -1,0 +1,375 @@
+:root {
+  --primary: #4a5d4e; /* Elegant Sage Green */
+  --accent: #d4a373; /* Warm Gold/Sand */
+  --bg-light: #fdfbf7; /* Off-white Cream */
+  --bg-alt: #f4f0ea; /* Light Beige */
+  --text-dark: #2b2b2b;
+  --text-muted: #666;
+  --font-heading: "Bodoni Moda", serif;
+  --font-body: "Bodoni Moda", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Prevents sticky navbar from covering section titles */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("assets/couple.jpg") center/cover no-repeat;
+  background-color: var(--primary); /* Fallback if no photo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+}
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eae2d6;
+  z-index: 100;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.alt-bg {
+  background-color: var(--bg-alt);
+  max-width: 100%;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Schedule Timeline */
+.timeline {
+  list-style: none;
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+.timeline li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.timeline span {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Countdown Banner */
+.countdown-banner {
+  background: var(--primary);
+  color: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+#countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+#countdown-timer div {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+#countdown-timer span {
+  display: block;
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: bold;
+}
+
+/* RSVP Form */
+.rsvp-form {
+  max-width: 500px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #38473b;
+}
+
+/* Registry */
+.registry-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Fade-in Animation Styles */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Password Protection Overlay */
+.password-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
+}
+
+.password-box {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.password-box h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.password-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+#password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#site-password {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.error-msg {
+  color: #c94a4a;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+}
+
+/* --- Responsive Screen Size Adjustments --- */
+
+/* Tablets and Smaller Desktops (max-width: 900px) */
+@media (max-width: 900px) {
+  .section {
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+/* Mobile Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  /* Scale down hero typography to prevent awkward wrapping */
+  .hero {
+    height: 60vh;
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Stack navigation vertically or wrap cleanly */
+  .navbar {
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+  }
+
+  /* Tighten section padding and card spacing */
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  /* Countdown layout adjustment for narrow screens */
+  #countdown-timer {
+    gap: 1rem;
+  }
+
+  #countdown-timer span {
+    font-size: 2rem;
+  }
+
+  /* Make password box fit comfortably on small screens */
+  .password-overlay {
+    padding: 1rem;
+  }
+
+  .password-box {
+    padding: 1.5rem;
+  }
+}
