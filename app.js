@@ -1,14 +1,12 @@
 // --- PASSWORD PROTECTION ---
+const CORRECT_PASSWORD = "beninem2027";
+
 document
   .getElementById("password-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
     const inputVal = document.getElementById("site-password").value;
     const errorMsg = document.getElementById("password-error");
-
-    // Pulls from config.js (WEDDING_PASSWORD), falls back to empty string if missing
-    const CORRECT_PASSWORD =
-      typeof WEDDING_PASSWORD !== "undefined" ? WEDDING_PASSWORD : "";
 
     if (inputVal === CORRECT_PASSWORD) {
       document.getElementById("password-overlay").style.display = "none";
@@ -25,7 +23,7 @@ if (sessionStorage.getItem("wedding_auth") === "true") {
   document.getElementById("main-content").style.display = "block";
 }
 
-// 1. Countdown Timer (Target Date: October 27, 2027)
+// 1. COUNTDOWN TIMER (Target Date: October 27, 2027 at 4:00 PM)
 const weddingDate = new Date("October 27, 2027 16:00:00").getTime();
 
 function updateCountdown() {
@@ -54,7 +52,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// 2. Simple Form Handling
+// 2. RSVP FORM HANDLING
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   e.preventDefault();
   const status = document.getElementById("form-status");
@@ -64,7 +62,7 @@ document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   this.reset();
 });
 
-// 3. Fade-in Sections on Scroll
+// 3. FADE-IN SECTIONS ON SCROLL
 const observerOptions = {
   root: null,
   rootMargin: "0px",
