@@ -1,12 +1,14 @@
 // --- PASSWORD PROTECTION ---
-const CORRECT_PASSWORD = "beninem2027";
-
 document
   .getElementById("password-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
     const inputVal = document.getElementById("site-password").value;
     const errorMsg = document.getElementById("password-error");
+
+    // Pulls from config.js (WEDDING_PASSWORD), falls back to empty string if missing
+    const CORRECT_PASSWORD =
+      typeof WEDDING_PASSWORD !== "undefined" ? WEDDING_PASSWORD : "";
 
     if (inputVal === CORRECT_PASSWORD) {
       document.getElementById("password-overlay").style.display = "none";
